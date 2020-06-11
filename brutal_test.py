@@ -30,6 +30,14 @@ class TestBrutal(unittest.TestCase):
 
         self.assertTrue(does_exist, "Header's image not found.")
 
+    def test_check_exists_bba(self):
+        self.driver.get("https://aloisdegouvello.gitlab.io/brutal/index.html")
+
+        selector = "#inline-bba" 
+        does_exist = check_exists_by_css(self.driver, selector)
+
+        self.assertTrue(does_exist, "BBA input not found.")
+
     def tearDown(self):
         self.driver.close()
 
